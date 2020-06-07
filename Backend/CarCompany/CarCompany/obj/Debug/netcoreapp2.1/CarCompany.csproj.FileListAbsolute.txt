@@ -1,0 +1,14 @@
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\bin\Debug\netcoreapp2.1\CarCompany.deps.json
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\bin\Debug\netcoreapp2.1\CarCompany.runtimeconfig.json
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\bin\Debug\netcoreapp2.1\CarCompany.runtimeconfig.dev.json
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\bin\Debug\netcoreapp2.1\CarCompany.dll
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.csprojAssemblyReference.cache
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.RazorAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.RazorAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.RazorTargetAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\bin\Debug\netcoreapp2.1\CarCompany.pdb
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.dll
+C:\Users\USUARIO\Desktop\TecWeb\Proyecto Final\Backend\CarCompany\CarCompany\obj\Debug\netcoreapp2.1\CarCompany.pdb
