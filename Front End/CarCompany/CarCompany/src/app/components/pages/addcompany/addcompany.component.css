@@ -1,0 +1,21 @@
+#form-register{
+    background-color: #8faab3;
+    padding: 10px;
+}
+
+h1{
+    font-size: 1.5em;
+    color: #66FCF1;
+    background-color: #1F2833;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 0px;
+    
+}
+
+input{
+   
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    
+}
+

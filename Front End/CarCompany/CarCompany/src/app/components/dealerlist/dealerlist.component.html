@@ -1,0 +1,23 @@
+<div>
+    <div class="container mb-3 pb-3">
+        <div class="pt-3">
+            <img id="img-center"  src="./assets/centro.jpg" >
+        </div>  
+
+        <div class="album">
+            <div class="row">
+                
+                <app-dealer
+                *ngFor="let dealer of dealers"
+                [dealerInput] = "dealer"
+                (dealertoDelete)="DeleteDealer($event)"
+                >
+           
+               </app-dealer>
+    
+            </div>
+        </div>
+  
+    </div>
+      
+</div>

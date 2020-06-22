@@ -1,0 +1,11 @@
+<div>
+    <div *ngIf="isDeleted; else elseBlock">
+        <p>The company was delete</p>
+    </div>
+
+    <div #elseBlock>
+        <app-dealer  [dealerInput] = "dealer" (dealertoDelete)="DeleteDealer($event)"></app-dealer>
+    </div>
+    
+</div>
+

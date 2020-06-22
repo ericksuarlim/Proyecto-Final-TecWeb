@@ -1,0 +1,36 @@
+<div>
+
+    <nav id="header" class="navbar nabvar-default navba-expand-sm pt-1">
+        <div class="container ">
+
+            <div class="align-items-center">
+                
+                <img id="image-logo" src="./assets/logo.jpg">
+
+                <div class="navbar-brand pl-2 float-right">     
+                    
+                    <a  routerLink="/">
+                        <h1>VEK Car Company</h1>
+                    </a>
+                    <span>Bolivia</span>
+                </div>
+
+            </div>
+
+            <div class="mx-auto">
+                <form class="form-inline" (ngSubmit)="onSubmit()">
+                    <input class="form-control" type="number" name="id" [(ngModel)]="id" placeholder="Id Company">
+                    <input class="btn btn-outline-info m-1" type="submit">
+                </form>
+            </div>
+           
+            <div class="user-register" class="align-self-right">
+                <a routerLink="/addcompany" class=" btn btn-info  btn-sm mr-2">Add Company</a>
+                <a href="#" class=" btn btn-info  btn-sm">Contact Us</a>
+                
+            </div>
+
+        </div>
+    </nav>
+
+</div>
