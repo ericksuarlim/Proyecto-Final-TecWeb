@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dnone\\source\\repos\\DealerAPI\\DealerAPI\\DealerAPI.csproj": {}
+    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dnone\\source\\repos\\DealerAPI\\DealerAPI\\DealerAPI.csproj": {
+    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dnone\\source\\repos\\DealerAPI\\DealerAPI\\DealerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj",
         "projectName": "DealerAPI",
-        "projectPath": "C:\\Users\\dnone\\source\\repos\\DealerAPI\\DealerAPI\\DealerAPI.csproj",
+        "projectPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj",
         "packagesPath": "C:\\Users\\dnone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dnone\\source\\repos\\DealerAPI\\DealerAPI\\obj\\",
+        "outputPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -21,14 +21,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           }
         },
@@ -39,7 +39,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.2": {
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -48,18 +48,23 @@
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.1, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "Microsoft.AspNetCore.Razor.Design": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.6, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             }
           },
