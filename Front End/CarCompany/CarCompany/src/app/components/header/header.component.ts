@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
   onSubmit() {
     console.log(this.id);
     this.router.navigateByUrl(`/dealers/${this.id}`);
-   
   }
 
 }

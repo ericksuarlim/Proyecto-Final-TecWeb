@@ -1,0 +1,50 @@
+<div class="container mb-3 pb-3">
+    
+    <form id="form-edit" (ngSubmit)="onSubmit(car)">
+                   
+        <div class="mb-2">
+            <h1 for="brand" class="text-center">Car Brand</h1>
+            <input type="text"  name="brand" [(ngModel)]="car.brand" class="form-control" placeholder="Required" maxlength="30" value required>
+            <div class="invalid-feedback">
+                Valid Brand is required.
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h1 for="model" class="text-center">Car Model</h1>
+            <input type="text" name="model" [(ngModel)]="car.model" class="form-control"  placeholder="Required" maxlength="60" value required>
+            <div class="invalid-feedback">
+                Valid Model is required.
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h1 for="price" class="text-center" >Price</h1>
+            <input type="number" name="price" [(ngModel)]="car.price" class="form-control"  placeholder="Required">
+            <div class="invalid-feedback">
+                Valid Price is required.
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h1 for="year" class="text-center">Car Model Year</h1>
+            <input type="number" name="year" [(ngModel)]="car.year" class="form-control" placeholder="No Required" maxlength="60">
+   
+        </div>
+
+        <div class="mb-2">
+            <h1 for="dealerId" class="text-center">Dealer Company ID</h1>
+            <input type="number" name="dealerId" [(ngModel)]="car.dealerId" class="form-control" placeholder="Required" maxlength="60">
+            <div class="invalid-feedback">
+                Valid Dealer Company ID is required.
+            </div>
+        </div>
+
+      <input type="submit" class="btn btn-lg btn-block bg-info " value="Enviar">
+
+    </form>
+    
+    <app-car *ngIf="show" [carInput] = "car"></app-car>
+    
+
+</div>

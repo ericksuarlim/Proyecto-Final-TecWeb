@@ -1,0 +1,91 @@
+dt{
+    position: absolute;
+    padding-left: 1px;
+}
+
+dd{
+    margin-left: 120px;
+}
+
+.card{
+
+    background-color: #45A29E;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 2px solid #1F2833;
+    border-radius: .25rem;
+    max-height: 450px;
+    min-width: 210px;
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
+ 
+}
+
+#id-car{    
+    color: #66FCF1;
+    background-color:black;
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
+.card-body #footer{
+    background-color:#1F2833;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 0px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+  
+}
+
+.card-body h3{
+    color: #66FCF1;
+    background-color: #0c0c0c;
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin-right: -10px;
+    margin-left: -10px;
+    text-transform: uppercase;
+    border: 1px solid #66FCF1;
+    max-height: 30px;    
+    white-space:  nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
+}
+
+.card-body a{
+    background-color: black;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #66FCF1; 
+    padding-top: 8px;
+}
+
+button:hover{
+    text-decoration: none;
+    color: red;
+}
+
+button{
+    background-color: black;
+    height: 40px;
+    width: 70px;
+    font-size: 0.8em;
+    color: #66FCF1; 
+}

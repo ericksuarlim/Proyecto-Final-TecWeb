@@ -4,7 +4,7 @@
         <div class="card mb-4 justify-content-center">
 
             <div class="card-body pb-0">
-                <h3 class="display-5 text-center">{{dealerInput.name}}</h3>
+                <h3 class="display-5 text-center" >{{dealerInput.name}}</h3>
                 
                 <div id="Information">
                    
@@ -34,8 +34,9 @@
                 <div id="footer" class="d-flex align-items-center justify-content-between">
                     <div id="id-company" class="font-weight-bold">{{dealerInput.id}}</div>
                     <div>
+                        <button  (click)=" ClickSeeMore()">See More</button>
                         <button class="delete text-danger" (click)=" DeleteDealer()">Delete</button>
-                        <button routerLink="/editdealer"  >Edit</button>
+                        <button (click)="ClickEdit()"  >Edit</button>
 
                     </div>
                    

@@ -30,6 +30,14 @@ export class DealerService {
     return this.http.get<Dealer>(`${this.dealerUrl}/${idDealer}`);
   }
 
+  createDealer(dealertoCreate:Dealer):Observable<Dealer>{
+    return this.http.post<any>(this.dealerUrl, dealertoCreate, httpOptions);
+  }
+
+  updateDealer(dealertoUpdate:Dealer):Observable<any>{
+    return this.http.put(`${this.dealerUrl}/${dealertoUpdate.id}`, dealertoUpdate, httpOptions);
+  }
+
 
 
   

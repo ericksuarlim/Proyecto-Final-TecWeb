@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Dealer } from 'src/app/Model/dealer';
+import { DealerService } from 'src/app/services/dealer.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-editdealer',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditdealerComponent implements OnInit {
 
-  constructor() { }
+  dealer:Dealer;
+  show:boolean=false;
+  constructor(private dealerService:DealerService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    const dealerId = this.route.snapshot.paramMap.get("dealerId");
+    console.log(dealerId);
+    this.dealerService.getDealer(dealerId).subscribe(d => {
+      this.dealer = d;
+    }); 
+
+  
   }
+
+  onSubmit(dealer:Dealer){
+    this.dealerService.updateDealer(dealer).subscribe(d => {
+      console.log(d);
+    });
+    this.show=true;
+  }
+  
 
 }

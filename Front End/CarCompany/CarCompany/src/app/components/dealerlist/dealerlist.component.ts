@@ -19,10 +19,9 @@ export class DealerlistComponent implements OnInit {
 
   DeleteDealer(dealertoDelete:Dealer){
     this.dealers =this.dealers.filter(r=>r.id !==dealertoDelete.id);
+    console.log(this.dealers);
     this.dealerService.deleteDealer(dealertoDelete).subscribe();
   }
-
-
 
 
 

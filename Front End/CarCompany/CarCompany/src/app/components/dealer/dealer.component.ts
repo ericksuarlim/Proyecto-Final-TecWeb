@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Dealer } from 'src/app/Model/dealer';
 import { DealerService } from 'src/app/services/dealer.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +15,8 @@ export class DealerComponent implements OnInit {
   @Input() dealerInput: Dealer;
   @Output() dealertoDelete: EventEmitter<Dealer> = new EventEmitter();
   
-  constructor(private dealerService:DealerService) { }
+  constructor(private dealerService:DealerService,private route: ActivatedRoute,
+    private router: Router) { }
 
  
   
@@ -26,7 +27,17 @@ export class DealerComponent implements OnInit {
   DeleteDealer(){
     this.dealertoDelete.emit(this.dealerInput);
   
-    }
+  }
+
+  ClickSeeMore()
+  {
+    this.router.navigateByUrl(`/dealers/${this.dealerInput.id}/cars`);
+  }
+
+  ClickEdit(){
+    this.router.navigateByUrl(`/dealers/${this.dealerInput.id}/editdealer`);
+
+  }
 
 
 

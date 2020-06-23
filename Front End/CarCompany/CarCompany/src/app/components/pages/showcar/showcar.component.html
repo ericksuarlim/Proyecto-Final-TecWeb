@@ -1,0 +1,11 @@
+
+<div>
+    <div *ngIf="isDeleted; else elseBlock">
+        <p>The car was delete</p>
+    </div>
+
+    <div  #elseBlock>
+        <app-car  [carInput] = "car" (cartoDelete)="DeleteCar($event)"></app-car>
+    </div>
+   
+</div>
