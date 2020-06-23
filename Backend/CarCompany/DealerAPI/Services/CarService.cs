@@ -41,10 +41,10 @@ namespace DealerAPI.Services
         {
             ValidateDealer(DealerId);
             var car = repository.GetCar(id);
-            if (car == null || car.DealerId != DealerId)
-            {
-                throw new NotFoundException($"The id :{id} doesn't exist.");
-            }
+            //if (car == null || car.DealerId != DealerId)
+            //{
+            //    throw new NotFoundException($"The id :{id} doesn't exist.");
+            //}
 
             return mapper.Map<CarModel>(car);
         }
