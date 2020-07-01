@@ -39,6 +39,11 @@ namespace DealerAPI
             services.AddEntityFrameworkSqlServer();
             services.AddDbContext<DealerDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("DealerConnection")); }
             );
+
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => { options.AllowAnyOrigin(); options.AllowAnyMethod(); options.AllowAnyHeader(); });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +52,7 @@ namespace DealerAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors(options => { options.AllowAnyOrigin(); options.AllowAnyMethod(); options.AllowAnyHeader(); });
             }
             else
             {

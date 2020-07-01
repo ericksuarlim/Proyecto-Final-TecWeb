@@ -34,3 +34,21 @@ C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend - Copy\CarCompany\Deal
 C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend - Copy\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.pdb
 C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend - Copy\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.genruntimeconfig.cache
 C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend - Copy\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.csproj.CoreCompileInputs.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\DealerAPI.deps.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\DealerAPI.runtimeconfig.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\DealerAPI.runtimeconfig.dev.json
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\DealerAPI.dll
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\bin\Debug\netcoreapp2.2\DealerAPI.pdb
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.csprojAssemblyReference.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.AssemblyInfoInputs.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.AssemblyInfo.cs
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.csproj.CoreCompileInputs.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.RazorAssemblyInfo.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.RazorAssemblyInfo.cs
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.RazorTargetAssemblyInfo.cache
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.dll
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.pdb
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.2\DealerAPI.genruntimeconfig.cache

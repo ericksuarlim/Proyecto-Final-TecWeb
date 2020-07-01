@@ -4,14 +4,16 @@ using DealerAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DealerAPI.Migrations
 {
     [DbContext(typeof(DealerDbContext))]
-    partial class DealerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200629174554_AddedtoDB")]
+    partial class AddedtoDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,7 +30,7 @@ namespace DealerAPI.Migrations
                     b.Property<string>("Brand")
                         .IsRequired();
 
-                    b.Property<int>("DealerId");
+                    b.Property<int?>("DealerId");
 
                     b.Property<string>("Model");
 
@@ -69,8 +71,7 @@ namespace DealerAPI.Migrations
                 {
                     b.HasOne("DealerAPI.Data.Entities.DealerEntity", "Dealer")
                         .WithMany("Cars")
-                        .HasForeignKey("DealerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DealerId");
                 });
 #pragma warning restore 612, 618
         }

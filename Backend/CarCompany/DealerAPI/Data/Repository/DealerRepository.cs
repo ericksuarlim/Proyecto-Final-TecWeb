@@ -37,7 +37,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Toyota",
                 Model = "Camry",
                 Price = 23000,
-                //DealerId = 1
+                DealerId = 1
 
             });
             cars.Add(new CarEntity()
@@ -46,7 +46,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Suzuki",
                 Model = "Vitara",
                 Price = 27000,
-                //DealerId = 1
+                DealerId = 1
 
             });
 
@@ -56,7 +56,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Subaru",
                 Model = "Legacy",
                 Price = 18000,
-               // DealerId = 2
+                DealerId = 2
 
             });
 
@@ -66,7 +66,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Jeep",
                 Model = "Cherokee",
                 Price = 25000,
-               // DealerId = 2
+                DealerId = 2
 
             });
         }
@@ -107,8 +107,8 @@ namespace DealerAPI.Data.Repository
 
         public IEnumerable<CarEntity> GetCars(int dealerId)
         {
-            //return cars.Where(d => d.DealerId == dealerId);
-            return null;
+            return cars.Where(d => d.DealerId == dealerId);
+            //return cars;
         }
 
         public DealerEntity GetDealer(int id, bool showCars = false)

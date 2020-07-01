@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v+jWXyQDj5frNj0wY66TmLFPxDhLkJYfJHhM38I839/dA/sFr78mbT7cbgWnx0qmqU570cIS+dIl2pqH3vUouQ==",
+  "dgSpecHash": "rHiTWsy6cHmBQEi+vJlAynztxm6z/DbZ5OSZmnlhLzy1A/ft0eL5ONpQ3mfhf84eRqCElBvLWYEyIXY2mCrydw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj",
+  "projectFilePath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\DealerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dnone\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\dnone\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

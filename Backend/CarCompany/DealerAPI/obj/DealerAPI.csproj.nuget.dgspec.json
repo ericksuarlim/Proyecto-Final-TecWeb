@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj": {}
+    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\DealerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj": {
+    "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\DealerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\DealerAPI.csproj",
         "projectName": "DealerAPI",
-        "projectPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\DealerAPI.csproj",
+        "projectPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\DealerAPI.csproj",
         "packagesPath": "C:\\Users\\dnone\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend - Copy\\CarCompany\\DealerAPI\\obj\\",
+        "outputPath": "C:\\Users\\dnone\\source\\repos\\Proyecto-Final-TecWeb\\Backend\\CarCompany\\DealerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -78,7 +78,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
