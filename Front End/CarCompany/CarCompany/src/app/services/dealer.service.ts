@@ -31,6 +31,7 @@ export class DealerService {
   }
 
   createDealer(dealertoCreate:Dealer):Observable<Dealer>{
+    console.log(dealertoCreate);
     return this.http.post<any>(this.dealerUrl, dealertoCreate, httpOptions);
   }
 

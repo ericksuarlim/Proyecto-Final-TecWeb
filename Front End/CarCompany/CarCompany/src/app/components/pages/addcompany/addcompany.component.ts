@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Dealer } from 'src/app/Model/dealer';
 import { DealerService } from 'src/app/services/dealer.service';
-
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-addcompany',
@@ -26,11 +26,14 @@ export class AddcompanyComponent implements OnInit {
   }
 
   onSubmit(){
+    var date = moment(this.fundation, "YYYY-MM-DD").format();
+    var fecha= date.toString();
+    console.log(fecha);
     var dealertoSend= new Dealer();
     dealertoSend.name=this.name;
     dealertoSend.address= this.address;
     dealertoSend.phone= this.phone;
-    dealertoSend.fundation= this.fundation;
+    dealertoSend.fundation= fecha;
    this.dealerService.createDealer(dealertoSend).subscribe(d =>{this.dealer=d});
    this.show=true;
 
