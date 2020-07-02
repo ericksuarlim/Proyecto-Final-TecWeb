@@ -8,6 +8,9 @@ import { CarlistComponent } from './components/carlist/carlist.component';
 import { ShowcarComponent } from './components/pages/showcar/showcar.component';
 import { AddcarComponent } from './components/pages/addcar/addcar.component';
 import { EditcarComponent } from './components/pages/editcar/editcar.component';
+import { ListfeedbackComponent } from './components/pages/listfeedback/listfeedback.component';
+import { AddfeedbackComponent } from './components/pages/addfeedback/addfeedback.component';
+import { MigratecarComponent } from './components/pages/migratecar/migratecar.component';
 
 
 const routes: Routes = [
@@ -18,7 +21,12 @@ const routes: Routes = [
   {path:'dealers/:dealerId/cars' , component: CarlistComponent},
   { path: 'dealers/:dealerId/cars/:carId', component: ShowcarComponent },
   {path:'addcar' , component: AddcarComponent},
-  {path:'dealers/:dealerId/cars/:carId/editcar' , component: EditcarComponent}
+  {path:'dealers/:dealerId/cars/:carId/editcar' , component: EditcarComponent},
+  {path:'listfeedback' , component: ListfeedbackComponent},
+  {path:'addfeedback' , component: AddfeedbackComponent},
+  {path:'dealers/:dealerId/cars/:carId/migratecar' , component: MigratecarComponent},
+  
+
 ];
 
 @NgModule({

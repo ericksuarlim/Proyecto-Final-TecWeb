@@ -35,6 +35,10 @@ export class CarComponent implements OnInit {
     this.router.navigateByUrl(`/dealers/${this.carInput.dealerId}/cars/${this.carInput.id}/editcar`);
   }
 
+  ClickmigrateCar(){
+    this.router.navigateByUrl(`/dealers/${this.carInput.dealerId}/cars/${this.carInput.id}/migratecar`);
+  }
+
 
 
 }

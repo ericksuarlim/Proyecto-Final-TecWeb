@@ -1,0 +1,13 @@
+h5{
+    text-align: center;
+    color: aqua;
+}
+.titulo{
+    background-color: rgb(26, 26, 47);
+    border-radius:  3px;
+    
+}
+
+.list-group-item{
+    border: 1px solid  rgb(26, 26, 47);
+}

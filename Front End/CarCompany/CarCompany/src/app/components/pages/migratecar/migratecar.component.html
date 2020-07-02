@@ -1,0 +1,16 @@
+<div class="container ">
+    <form id="form-edit" (ngSubmit)="onSubmit()">
+                   
+        <div class="mb-2">
+            <h1 for="idtomigrate" class="text-center">ID Company to migrate</h1>
+            <input type="text"  name="idtomigrate" [(ngModel)]="idtomigrate" class="form-control" placeholder="Required" maxlength="30" value required>
+            <div class="invalid-feedback">
+                Valid Brand is required.
+            </div>
+        </div>
+        <input type="submit" class="btn btn-lg btn-block bg-info " value="Migrate">
+    </form>
+
+    <p *ngIf="show">The car was migrated</p>
+
+</div>

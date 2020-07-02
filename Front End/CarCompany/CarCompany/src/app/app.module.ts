@@ -16,6 +16,10 @@ import { CarComponent } from './components/car/car.component';
 import { AddcarComponent } from './components/pages/addcar/addcar.component';
 import { EditcarComponent } from './components/pages/editcar/editcar.component';
 import { ShowcarComponent } from './components/pages/showcar/showcar.component';
+import { AddfeedbackComponent } from './components/pages/addfeedback/addfeedback.component';
+import { FeedbackComponent } from './components/pages/feedback/feedback.component';
+import { ListfeedbackComponent } from './components/pages/listfeedback/listfeedback.component';
+import { MigratecarComponent } from './components/pages/migratecar/migratecar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { ShowcarComponent } from './components/pages/showcar/showcar.component';
     CarComponent,
     AddcarComponent,
     EditcarComponent,
-    ShowcarComponent
+    ShowcarComponent,
+    AddfeedbackComponent,
+    FeedbackComponent,
+    ListfeedbackComponent,
+    MigratecarComponent
   ],
   imports: [
     BrowserModule,
