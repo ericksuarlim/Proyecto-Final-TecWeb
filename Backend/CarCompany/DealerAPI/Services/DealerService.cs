@@ -23,23 +23,37 @@ namespace DealerAPI.Services
             this.mapper = mapper;
         }
 
-        public DealerModel CreateDealer(DealerModel newDealer)
+        public async Task<DealerModel> CreateDealerAsync(DealerModel newDealer)
         {
             var dealerEntity = mapper.Map<DealerEntity>(newDealer);
-            var newDealerEntity = repository.CreateDealer(dealerEntity);
-            return mapper.Map<DealerModel>(newDealerEntity);
+            repository.CreateDealer(dealerEntity);
+            var res = await repository.SaveChangesAsync();
+            if (res)
+            { 
+                return mapper.Map<DealerModel>(dealerEntity);
+            }
+
+            throw new Exception("Database exception");
         }
 
-        public bool DeleteDealer(int id)
+        public async Task<bool> DeleteDealerAsync(int id)
         {
-            var dealerToDelete = GetDealer(id);
-            repository.DeleteDealer(id);
-            return true;
+            var dealerToDelete = await GetDealerAsync(id);
+            await repository.DeleteDealer(id);
+
+            var deal = await repository.SaveChangesAsync();
+            if (deal)
+            {
+                return true;
+            }
+
+            throw new Exception("Database Exception");
+
         }
 
-        public DealerModel GetDealer(int id)
+        public async Task<DealerModel> GetDealerAsync(int id)
         {
-            var resturantEntity = repository.GetDealer(id);
+            var resturantEntity = await repository.GetDealerAsync(id);
             if (resturantEntity == null)
             {
                 throw new NotFoundException($"the id :{id} not exist");
@@ -51,23 +65,29 @@ namespace DealerAPI.Services
 
         }
 
-        public IEnumerable<DealerModel> GetDealers(string orderBy)
+        public async Task<IEnumerable<DealerModel>> GetDealersAsync(string orderBy, bool showCars)
         {
             if (!allowedSortValues.Contains(orderBy.ToLower()))
             {
                 throw new BadOperationRequest($"bad sort value: { orderBy } allowed values are: { String.Join(",", allowedSortValues)}");
             }
-            var dealerEntities = repository.GetDealers(orderBy);
+            var dealerEntities = await repository.GetDealersAsync(orderBy, showCars);
             return mapper.Map<IEnumerable<DealerModel>>(dealerEntities);
         }
 
-        public bool UpdateDealer(int id, DealerModel dealer)
+        public async Task<bool> UpdateDealerAsync(int id, DealerModel dealer)
         {
-            GetDealer(id);
+            await GetDealerAsync(id);
             dealer.Id = id;
 
             repository.UpdateDealer(mapper.Map<DealerEntity>(dealer));
-            return true;
+            var deal = await repository.SaveChangesAsync();
+            if (deal)
+            {
+                return true;
+            }
+
+            throw new Exception("Database Exception");
         }
     }
 }

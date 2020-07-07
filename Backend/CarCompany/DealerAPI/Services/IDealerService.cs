@@ -8,10 +8,10 @@ namespace DealerAPI.Services
 {
     public interface IDealerService
     {
-        DealerModel GetDealer(int id);
-        IEnumerable<DealerModel> GetDealers(string orderBy = "id");
-        DealerModel CreateDealer(DealerModel newDealer);
-        bool UpdateDealer(int id, DealerModel dealer);
-        bool DeleteDealer(int id);
+        Task<DealerModel> GetDealerAsync(int id);
+        Task<IEnumerable<DealerModel>> GetDealersAsync(string orderBy = "id", bool showCars = false);
+        Task <DealerModel> CreateDealerAsync(DealerModel newDealer);
+        Task<bool> UpdateDealerAsync(int id, DealerModel dealer);
+        Task<bool> DeleteDealerAsync(int id);
     }
 }

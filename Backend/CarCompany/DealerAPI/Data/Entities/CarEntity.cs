@@ -19,6 +19,5 @@ namespace DealerAPI.Data.Entities
         public int Year { get; set; }
         [ForeignKey("DealerId")]
         public virtual DealerEntity Dealer { get; set; }
-        public int DealerId { get; set; }
     }
 }

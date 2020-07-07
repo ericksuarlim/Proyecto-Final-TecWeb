@@ -19,11 +19,11 @@ namespace DealerAPI.Controllers
             this.service = service;
         }
         [HttpDelete("{id:int}")]
-        public ActionResult<bool> DeleteCar(int dealerId, int id)
+        public async Task<IActionResult> DeleteCar(int dealerId, int id)
         {
             try
             {
-                return Ok(service.DeleteCar(dealerId, id));
+                return Ok(await service.DeleteCarAsync(dealerId, id));
             }
             catch (NotFoundException ex)
             {
@@ -37,11 +37,11 @@ namespace DealerAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public ActionResult<bool> UpdateCar(int dealerId, int id, [FromBody]CarModel car)
+        public async Task<ActionResult<bool>> UpdateCarAsync(int dealerId, int id, [FromBody]CarModel car)
         {
             try
             {
-                return Ok(service.UpdateCar(dealerId, id, car));
+                return Ok(await service.UpdateCarAsync(dealerId, id, car));
             }
             catch (NotFoundException ex)
             {
@@ -55,11 +55,11 @@ namespace DealerAPI.Controllers
 
         }
         [HttpGet("{id:int}")]
-        public ActionResult<CarModel> GetCar(int dealerId, int id)
+        public async Task<ActionResult<CarModel>> GetCarAsync(int dealerId, int id)
         {
             try
             {
-                return Ok(service.GetCar(dealerId, id));
+                return Ok(await service.GetCarAsync(dealerId, id));
             }
             catch (NotFoundException ex)
             {
@@ -73,11 +73,11 @@ namespace DealerAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CarModel> CreateCar(int dealerId, [FromBody]CarModel car)
+        public async Task<ActionResult<CarModel>> CreateCarAsync(int dealerId, [FromBody]CarModel car)
         {
             try
             {
-                var newCar = service.CreateCar(dealerId, car);
+                var newCar = await service.CreateCarAsync(dealerId, car);
                 return Created($"api/dealers/{dealerId}/cars/{newCar.Id}", newCar);
 
             }
@@ -89,11 +89,11 @@ namespace DealerAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<CarModel> GetCars(int dealerId)
+        public async Task<ActionResult<CarModel>> GetCarsAsync(int dealerId)
         {
             try
             {
-                return Ok(service.GetCars(dealerId));
+                return Ok(await service.GetCarsAsync(dealerId));
 
             }
             catch (Exception)

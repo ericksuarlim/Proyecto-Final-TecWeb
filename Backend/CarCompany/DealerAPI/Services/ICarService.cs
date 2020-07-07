@@ -8,10 +8,10 @@ namespace DealerAPI.Services
 {
     public interface ICarService
     {
-        CarModel GetCar(int DealerId, int id);
-        IEnumerable<CarModel> GetCars(int DealerId);
-        CarModel CreateCar(int DealerId, CarModel newCar);
-        bool UpdateCar(int DealerId, int id, CarModel Car);
-        bool DeleteCar(int DealerId, int id);
+        Task<CarModel> GetCarAsync(int DealerId, int id);
+        Task<IEnumerable<CarModel>> GetCarsAsync(int DealerId);
+        Task<CarModel> CreateCarAsync(int DealerId, CarModel newCar);
+        Task<bool> UpdateCarAsync(int DealerId, int id, CarModel Car);
+        Task<bool> DeleteCarAsync(int DealerId, int id);
     }
 }

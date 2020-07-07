@@ -1,4 +1,5 @@
 ﻿using DealerAPI.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DealerAPI.Data
 {
-    public class DealerDbContext : DbContext
+    public class DealerDbContext : IdentityDbContext
     {
 
         public DbSet<DealerEntity> Dealers { get; set; }

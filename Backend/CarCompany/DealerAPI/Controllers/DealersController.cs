@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using DealerAPI.Exceptions;
 using DealerAPI.Models;
 using DealerAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DealerAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     //[ApiController]
     public class DealersController : ControllerBase
@@ -22,11 +24,13 @@ namespace DealerAPI.Controllers
         }
 
         [HttpGet()]
-        public ActionResult<IEnumerable<DealerModel>> GetDealers(string orderBy = "id")
+        public async Task<ActionResult<IEnumerable<DealerModel>>> GetDealers(string orderBy = "id", bool showCars = false)
         {
+            var user = User;
+
             try
             {
-                return Ok(service.GetDealers(orderBy));
+                return Ok(await service.GetDealersAsync(orderBy, showCars));
             }
             catch (BadOperationRequest ex)
             {
@@ -39,11 +43,11 @@ namespace DealerAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public ActionResult<DealerModel> GetDealer(int id)
+        public async Task<ActionResult<DealerModel>> GetDealerAsync(int id)
         {
             try
             {
-                return Ok(service.GetDealer(id));
+                return Ok(await service.GetDealerAsync(id));
             }
             catch (NotFoundException ex)
             {
@@ -57,7 +61,7 @@ namespace DealerAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DealerModel> CreateDealer([FromBody] DealerModel dealer)
+        public async Task <ActionResult<DealerModel>> CreateDealer([FromBody] DealerModel dealer)
         {
             try
             {
@@ -66,7 +70,7 @@ namespace DealerAPI.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var newDealer = service.CreateDealer(dealer);
+                var newDealer = await service.CreateDealerAsync(dealer);
                 return Created($"/api/Dealers/{newDealer.Id}", newDealer);
             }
             catch (NotFoundException ex)
@@ -80,11 +84,11 @@ namespace DealerAPI.Controllers
             }
         }
         [HttpDelete("{id:int}")]
-        public ActionResult<bool> DeleteDealer(int id)
+        public async Task<ActionResult<bool>> DeleteDealerAsync(int id)
         {
             try
             {
-                var dlr = service.DeleteDealer(id);
+                var dlr = await service.DeleteDealerAsync(id);
                 return Ok(dlr);
             }
             catch (Exception ex)
@@ -93,7 +97,7 @@ namespace DealerAPI.Controllers
             }
         }
         [HttpPut("{id:int}")]
-        public ActionResult<bool> UpdateDealer(int id, [FromBody] DealerModel dealer)
+        public async Task<ActionResult<bool>> UpdateDealer(int id, [FromBody] DealerModel dealer)
         {
             try
             {
@@ -108,7 +112,7 @@ namespace DealerAPI.Controllers
                     }
                 }
 
-                return Ok(service.UpdateDealer(id, dealer));
+                return Ok(await service.UpdateDealerAsync(id, dealer));
             }
             catch (NotFoundException ex)
             {

@@ -16,3 +16,5 @@ C:\Users\dnone\source\repos\DealerAPI\DealerAPI\bin\Debug\netcoreapp2.1\DealerAP
 C:\Users\dnone\source\repos\DealerAPI\DealerAPI\obj\Debug\netcoreapp2.1\DealerAPI.csproj.CoreCompileInputs.cache
 C:\Users\dnone\source\repos\DealerAPI\DealerAPI\obj\Debug\netcoreapp2.1\DealerAPI.dll
 C:\Users\dnone\source\repos\DealerAPI\DealerAPI\obj\Debug\netcoreapp2.1\DealerAPI.pdb
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.1\DealerAPI.dll
+C:\Users\dnone\source\repos\Proyecto-Final-TecWeb\Backend\CarCompany\DealerAPI\obj\Debug\netcoreapp2.1\DealerAPI.pdb

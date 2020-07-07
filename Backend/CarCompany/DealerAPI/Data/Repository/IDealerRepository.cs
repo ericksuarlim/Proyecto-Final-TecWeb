@@ -8,16 +8,19 @@ namespace DealerAPI.Data.Repository
 {
     public interface IDealerRepository
     {
-        DealerEntity GetDealer(int id, bool showCars = false);
-        IEnumerable<DealerEntity> GetDealers(string orderBy, bool showCars = false);
-        DealerEntity CreateDealer(DealerEntity newDealer);
+        Task<DealerEntity> GetDealerAsync(int id, bool showCars = false);
+        Task<IEnumerable<DealerEntity>> GetDealersAsync(string orderBy, bool showCars = false);
+        void CreateDealer(DealerEntity newDealer);
         bool UpdateDealer(DealerEntity dealer);
-        bool DeleteDealer(int id);
+        Task<bool> DeleteDealer(int id);
 
-        CarEntity GetCar(int id);
-        IEnumerable<CarEntity> GetCars(int dealerId);
-        CarEntity CreateCar(CarEntity newCar);
+        Task<CarEntity> GetCarAsync(int id);
+        Task<IEnumerable<CarEntity>> GetCarsAsync(int dealerId);
+        void CreateCar(CarEntity newCar);
         bool UpdateCar(CarEntity Car);
-        bool DeleteCar(int id);
+        Task<bool> DeleteCarAsync(int id);
+
+
+        Task<bool> SaveChangesAsync();
     }
 }

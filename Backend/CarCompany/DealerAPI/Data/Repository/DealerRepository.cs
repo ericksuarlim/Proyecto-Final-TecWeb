@@ -1,4 +1,5 @@
 ﻿using DealerAPI.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,12 @@ namespace DealerAPI.Data.Repository
 {
     public class DealerRepository : IDealerRepository
     {
+        private DealerDbContext dbContext;
+        public DealerRepository(DealerDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
         private List<DealerEntity> dealers = new List<DealerEntity>();
         private List<CarEntity> cars = new List<CarEntity>();
 
@@ -37,7 +44,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Toyota",
                 Model = "Camry",
                 Price = 23000,
-                DealerId = 1
+                //DealerId = 1
 
             });
             cars.Add(new CarEntity()
@@ -46,7 +53,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Suzuki",
                 Model = "Vitara",
                 Price = 27000,
-                DealerId = 1
+                //DealerId = 1
 
             });
 
@@ -56,7 +63,7 @@ namespace DealerAPI.Data.Repository
                 Brand = "Subaru",
                 Model = "Legacy",
                 Price = 18000,
-                DealerId = 2
+                //DealerId = 2
 
             });
 
@@ -66,89 +73,109 @@ namespace DealerAPI.Data.Repository
                 Brand = "Jeep",
                 Model = "Cherokee",
                 Price = 25000,
-                DealerId = 2
+                //DealerId = 2
 
             });
         }
 
-        public CarEntity CreateCar(CarEntity newCar)
+        public void CreateCar(CarEntity newCar)
         {
-            var newId = cars.OrderByDescending(d => d.Id).FirstOrDefault().Id + 1;
-            newCar.Id = newId;
-            cars.Add(newCar);
-            return newCar;
+            dbContext.Entry(newCar.Dealer).State = EntityState.Unchanged;
+            dbContext.Cars.Add(newCar);
+
         }
 
-        public DealerEntity CreateDealer(DealerEntity newDealer)
+        public void CreateDealer(DealerEntity newDealer)
         {
-            var newId = dealers.OrderByDescending(r => r.Id).First().Id + 1;
-            newDealer.Id = newId;
-            dealers.Add(newDealer);
-            return newDealer;
+            dbContext.Dealers.Add(newDealer);
+
         }
 
-        public bool DeleteCar(int id)
+        public async Task<bool> DeleteCarAsync(int id)
         {
-            var dish = GetCar(id);
-            return cars.Remove(dish);
-        }
-
-        public bool DeleteDealer(int id)
-        {
-            var dealerDelete = GetDealer(id);
-            dealers.Remove(dealerDelete);
+            var car = await GetCarAsync(id);
+            dbContext.Cars.Remove(car);
             return true;
         }
 
-        public CarEntity GetCar(int id)
+        public async Task<bool> DeleteDealer(int id)
         {
-            return cars.SingleOrDefault(d => d.Id == id);
+            var dealerDelete = await dbContext.Dealers.FirstOrDefaultAsync(d => d.Id == id);
+            dbContext.Dealers.Remove(dealerDelete);
+            return true;
         }
 
-        public IEnumerable<CarEntity> GetCars(int dealerId)
+        public async Task<CarEntity> GetCarAsync(int id)
         {
-            return cars.Where(d => d.DealerId == dealerId);
-            //return cars;
+            IQueryable<CarEntity> query = dbContext.Cars;
+            query = query.Include(c => c.Dealer);
+            query = query.AsNoTracking();
+            return await query.SingleOrDefaultAsync(c => c.Id == id);
         }
 
-        public DealerEntity GetDealer(int id, bool showCars = false)
+        public async Task<IEnumerable<CarEntity>> GetCarsAsync(int dealerId)
         {
-            return dealers.FirstOrDefault(r => r.Id == id);
+            IQueryable<CarEntity> query = dbContext.Cars;
+            query = query.AsNoTracking();
+            return await query.ToArrayAsync();
         }
 
-        public IEnumerable<DealerEntity> GetDealers(string orderBy, bool showCars = false)
+        public async Task <DealerEntity> GetDealerAsync(int id, bool showCars = false)
         {
+            IQueryable<DealerEntity> query = dbContext.Dealers;
+            query = query.AsNoTracking();
+            return await query.FirstOrDefaultAsync(d => d.Id == id);
+        }
+
+        public async Task<IEnumerable<DealerEntity>> GetDealersAsync(string orderBy, bool showCars = false)
+        {
+            IQueryable<DealerEntity> query = dbContext.Dealers;
+
+            var dealer = query.FirstOrDefault();
+
             switch (orderBy)
             {
                 case "id":
-                    return dealers.OrderBy(r => r.Id);
+                    query = query.OrderBy(r => r.Id);
+                    break;
                 case "name":
-                    return dealers.OrderBy(r => r.Name);
+                    query = query.OrderBy(r => r.Name);
+                    break;
                 case "address":
-                    return dealers.OrderBy(r => r.Address);
+                    query = query.OrderBy(r => r.Address);
+                    break;
                 default:
-                    return dealers;
+                    break;
             }
+
+            if (showCars)
+            {
+                query = query.Include(d => d.Cars);
+            }
+
+            query = query.AsNoTracking();
+
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            var res = await dbContext.SaveChangesAsync();
+            return res > 0;
         }
 
         public bool UpdateCar(CarEntity car)
         {
-            var cr = GetCar(car.Id);
-            cr.Brand = car.Brand;
-            cr.Model = car.Model;
-            cr.Price = car.Price;
-            cr.Year = car.Year;
+            dbContext.Entry(car.Dealer).State = EntityState.Unchanged;
+            dbContext.Cars.Update(car);
             return true;
 
         }
         public bool UpdateDealer(DealerEntity dealer)
         {
-            var dlr = GetDealer(dealer.Id);
-            dlr.Name = dealer.Name ?? dlr.Name;
-            dlr.Phone = dealer.Phone ?? dlr.Phone;
-            dlr.Address = dealer.Address ?? dlr.Address;
-            dlr.Fundation = dealer.Fundation ?? dlr.Fundation;
+            dbContext.Dealers.Update(dealer);
             return true;
         }
+
     }
 }

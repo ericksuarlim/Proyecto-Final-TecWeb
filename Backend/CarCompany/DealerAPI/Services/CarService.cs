@@ -20,28 +20,48 @@ namespace DealerAPI.Services
             this.repository = repository;
             this.mapper = mapper;
         }
-        public CarModel CreateCar(int DealerId, CarModel newCar)
+        public async Task<CarModel> CreateCarAsync(int DealerId, CarModel newCar)
         {
-            ValidateDealer(DealerId);
-            var carEntity = repository.CreateCar(mapper.Map<CarEntity>(newCar));
-            return mapper.Map<CarModel>(carEntity);
+            await ValidateDealerAsync(DealerId);
+            newCar.DealerId = DealerId;
+            var carEntity = mapper.Map<CarEntity>(newCar);
+            
+            repository.CreateCar(carEntity);
+
+            var deal = await repository.SaveChangesAsync();
+            if (deal)
+            {
+                return mapper.Map<CarModel>(carEntity);
+            }
+
+            throw new Exception("Database Exception");
+            
         }
 
-        public bool DeleteCar(int dealerId, int id)
+        public async Task<bool> DeleteCarAsync(int dealerId, int id)
         {
-            var car = GetCar(dealerId, id);
+            var car = await GetCarAsync(dealerId, id);
             if (car == null)
             {
                 throw new NotFoundException($"The car with {id} does not exist in the dealership.");
             }
-            return repository.DeleteCar(id);
+            await repository.DeleteCarAsync(id);
+            var deal = await repository.SaveChangesAsync();
+
+            if (deal)
+            {
+                return true;
+            }
+
+            throw new Exception("Database Exception");
         }
 
-        public CarModel GetCar(int DealerId, int id)
+        public async Task<CarModel> GetCarAsync(int DealerId, int id)
         {
-            ValidateDealer(DealerId);
-            var car = repository.GetCar(id);
-            if (car == null || car.DealerId != DealerId)
+            await ValidateDealerAsync(DealerId);
+            var car = await repository.GetCarAsync(id);
+
+            if (car == null || car.Dealer.Id != DealerId)
             {
                 throw new NotFoundException($"The id :{id} doesn't exist.");
             }
@@ -49,27 +69,34 @@ namespace DealerAPI.Services
             return mapper.Map<CarModel>(car);
         }
 
-        public IEnumerable<CarModel> GetCars(int dealerId)
+        public async Task<IEnumerable<CarModel>> GetCarsAsync(int dealerId)
         {
-            ValidateDealer(dealerId);
-            return mapper.Map<IEnumerable<CarModel>>(repository.GetCars(dealerId));
+            await ValidateDealerAsync(dealerId);
+            return mapper.Map<IEnumerable<CarModel>>(await repository.GetCarsAsync(dealerId));
         }
 
-        public bool UpdateCar(int dealerId, int id, CarModel car)
+        public async Task<bool> UpdateCarAsync(int dealerId, int id, CarModel car)
         {
             car.Id = id;
-            GetCar(dealerId, id);
+            await GetCarAsync(dealerId, id);
 
-            return repository.UpdateCar(mapper.Map<CarEntity>(car));
+            repository.UpdateCar(mapper.Map<CarEntity>(car));
 
+            var deal = await repository.SaveChangesAsync();
+            if (deal)
+            {
+                return true;
+            }
+
+            throw new Exception("Database Exception");
         }
 
-        private void ValidateDealer(int id)
+        private async Task ValidateDealerAsync(int id)
         {
-            var dealerEntity = repository.GetDealer(id);
+            var dealerEntity = await repository.GetDealerAsync(id);
             if (dealerEntity == null)
             {
-                throw new NotFoundException($"the id :{id} not exist for dealer");
+                throw new NotFoundException($"the id :{id} does not exist for dealer");
             }
         }
     }
